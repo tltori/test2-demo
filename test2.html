@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<h2>Please select the callback result to the APP:</h2>
+<select id="test" name="" style='width:150px;height:20px'>
+    <option value='null'>click me to choose...</option>
+    <option value='{"result":"00","notif":"Proses tandatangan berhasil"}'>Success00</option>
+    <option value='{"result":"01","notif":"go back"}'>Cancel01</option>
+    <option value='{"result":"05"}'>05</option>
+    <option value='{"result":"07"}'>07</option>
+    <option value='{"result":"14"}'>14</option>
+    <option value='{"result":"12"}'>12</option>
+    <option value='{"result":"20"}'>20</option>
+    <option value='{"result":"30"}'>30</option>
+    <option value='{"result":"55"}'>55</option>
+    <option value='{"result":"61"}'>61</option>
+    <option value='{"result":"06"}'>06</option>
+</select>
+<link rel="stylesheet" href="./test2.css">
+<script src="./test2.js"></script>
+</br>
+</br>
+
+<button id="btn" onclick="btnClick()">inform APP</button>
+
+<script>
+  var btn = document.getElementById("btn");
+  var myselect = document.getElementById("test")
+
+  btn.onclick = function () {
+    var index = myselect.selectedIndex;
+    var result = myselect.options[index].value;
+    window.parent.Return(result)
+  }
+</script>
+</body>
+</html>
